@@ -1,0 +1,98 @@
+un simpleType no puede tener extensiones porque es simple, solo texto
+pero si puede tener restricciones. tampoco puede tener simpleContent
+o complexContent.
+
+en cambio un complexType puede tener restricciones y extensiones
+ya que no es solo texto, sino que contiene tambien atribs. por eso
+estos si pueden llevar simpleContent y complexContent.
+
+la diferencia entre complexContent y simpleContent es que 
+complexContent se usa cuando hay que restringir o extender mas de 
+1 elemento/atrib (elemento & atrib juntos = 2) y simpleContent para
+enfocarse solo en 1 elemento
+
+los complexType van seguidos de => (
+    secuencia, un choice o un all
+) que contiene => (
+    element, attribute o attributeGroup
+) 
+
+en caso de quere añadir informacion o de restringir 
+el elemento => (
+    complexContent => (
+        restriction, extension
+    )
+)
+
+una extension se puede usar para ligar elementos ya creados a otros
+por ejemplo:
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <!-- Tipo base 'Persona' -->
+  <xs:complexType name="Persona">
+    <xs:sequence>
+      <xs:element name="nombre" type="xs:string"/>
+      <xs:element name="edad" type="xs:integer"/>
+    </xs:sequence>
+  </xs:complexType>
+
+
+  en este caso es complexContent porque se heredan mas de 1 elemento/
+  atrib de "Persona"
+
+  <!-- Tipo extendido 'Empleado' que hereda de 'Persona' -->
+  <xs:complexType name="Empleado">
+    <xs:complexContent>
+      <xs:extension base="Persona">
+        <xs:sequence>
+          <!-- Hereda 'nombre' y 'edad' de 'Persona' -->
+          <!-- Nuevo elemento 'puesto' específico para 'Empleado' -->
+          <xs:element name="puesto" type="xs:string"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  al poner de base "Persona", hereda los elementos del complexType 
+"Persona"
+
+</xs:schema>
+
+
+simpleContent:
+
+en este caso, es simpleContent porque solo añadimos un atributo y 
+no se heredan mas de 1 atrib/elemento.
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:complexType name="TipoProducto">
+    <xs:simpleContent>
+      <!-- Definición del contenido simple (restricción de xs:string) -->
+      <xs:extension base="xs:string">
+        <!-- Definición del atributo 'tipo' con enumeración de valores -->
+        <xs:attribute name="tipo" use="required">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <!-- Enumeración de valores permitidos para el atributo 'tipo' -->
+              <xs:enumeration value="Electrónico"/>
+              <xs:enumeration value="Ropa"/>
+              <xs:enumeration value="Juguete"/>
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:attribute>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <!-- Uso del tipo complejo en un elemento 'Producto' -->
+  <xs:element name="Producto" type="TipoProducto"/>
+
+  al elemento "Producto", que es de tipo complejo, le añado un atrib
+  que son siempre simples, por ello, el contenido es simple. defino 
+  la extension con el atributo que voy a añadirle. el atributo
+  puede recoger varios valores asique le añado la restricción con una
+  enumeración.
+
+</xs:schema>
