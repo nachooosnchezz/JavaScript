@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <!-- Definición de tipos -->
+    <xs:complexType name="habilidadesType">
+        <xs:sequence>
+            <xs:element name="habilidad" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="habilidadDestacada" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="statsType">
+        <xs:sequence>
+            <xs:element name="PS" type="xs:integer"/>
+            <xs:element name="Ataque" type="xs:integer"/>
+            <xs:element name="Defensa" type="xs:integer"/>
+            <xs:element name="Velocidad" type="xs:integer"/>
+            <xs:element name="AtaqueEspecial" type="xs:integer"/>
+            <xs:element name="DefensaEspecial" type="xs:integer"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="pokemonType">
+        <xs:sequence>
+            <xs:element name="nombre" type="xs:string"/>
+            <xs:element name="id" type="xs:integer"/>
+            <xs:element name="especie" type="xs:string"/>
+            <xs:element name="tipo" type="xs:string" minOccurs="2" maxOccurs="unbounded"/>
+            <xs:element name="habilidades" type="habilidadesType"/>
+            <xs:element name="stats" type="statsType"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="entrenadorType">
+        <xs:sequence>
+            <xs:element name="nombre" type="xs:string"/>
+            <xs:element name="apellidos" type="xs:string"/>
+            <xs:element name="edad" type="xs:integer"/>
+            <xs:element name="fechaNacimiento" type="xs:string"/>
+            <xs:element name="lugarNacimiento" type="xs:string"/>
+            <xs:element name="pokemon" type="pokemonType"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="pokedexType">
+        <xs:sequence>
+            <xs:element name="pokemon" type="pokemonType" minOccurs="1" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="ligaPokemonType">
+        <xs:sequence>
+            <xs:element name="pokedex" type="pokedexType"/>
+            <xs:element name="entrenadores" type="entrenadoresType"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="entrenadoresType">
+        <xs:sequence>
+            <xs:element name="entrenador" type="entrenadorType" minOccurs="1" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:element name="ligaPokemon" type="ligaPokemonType"/>
+
+</xs:schema>
