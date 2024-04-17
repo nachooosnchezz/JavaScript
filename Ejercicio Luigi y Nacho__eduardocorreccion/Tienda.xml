@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- NO ESTABA BIEN LINKEADO -->
+<tienda xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:noNamespaceSchemaLocation="Tienda.xsd">
+    <producto>
+        <nombre>RAM HyperX Fury Black DDR4</nombre>
+        <categoria>Informática</categoria>
+        <precio>45</precio>
+        <disponibilidad tipo="true"></disponibilidad>
+        <fabricante>HyperX</fabricante>
+        <especificaciones>
+            <procesador></procesador>
+            <ram>8GB</ram>
+            <almacenamiento></almacenamiento>
+            <pantalla></pantalla>
+            <sistema_operativo></sistema_operativo>
+        </especificaciones>
+    </producto>
+</tienda>

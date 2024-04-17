@@ -1,0 +1,32 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="tienda">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="producto" type="productoType" minOccurs="1" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:complexType name="productoType">
+        <xs:sequence>
+            <xs:element name="nombre" type="xs:string" minOccurs="1"/>
+            <xs:element name="categoría" type="xs:string" minOccurs="1"/>
+            <!-- CAMBIAR LA TILDE -->
+            <xs:element name="precio" type="xs:decimal" minOccurs="1"/>
+            <!-- añadir atributo en el xml que se llame "tipo-moneda" -->
+            <xs:element name="disponibilidad" type="xs:boolean" minOccurs="1"/>
+            <xs:element name="fabricante" type="xs:string" minOccurs="1"/>
+            <xs:element name="especificaciones" type="especificacionesType" minOccurs="1"/>
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:complexType name="especificacionesType">
+        <xs:sequence>
+            <xs:element name="procesador" type="xs:string"/>
+            <xs:element name="ram" type="xs:string"/>
+            <xs:element name="almacenamiento" type="xs:string"/>
+            <xs:element name="pantalla" type="xs:string"/>
+            <xs:element name="sistema_operativo" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>

@@ -1,0 +1,14 @@
+<!ELEMENT tienda (producto)>
+<!ELEMENT producto (nombre+, categoria+, precio+, disponibilidad+, fabricante+, especificaciones+)>
+<!ELEMENT especificaciones (procesador, ram, almacenamiento, pantalla, sistema_operativo)>
+<!ELEMENT nombre (#PCDATA)>
+<!ELEMENT categoria (#PCDATA)>
+<!ELEMENT precio (#PCDATA)>
+<!ELEMENT disponibilidad (#PCDATA)>
+<!ELEMENT fabricante (#PCDATA)>
+<!ELEMENT procesador (#PCDATA)>
+<!ELEMENT ram (#PCDATA)>
+<!ELEMENT almacenamiento (#PCDATA)>
+<!ELEMENT pantalla (#PCDATA)>
+<!ELEMENT sistema_operativo (#PCDATA)>
+<!ATTLIST disponibilidad tipo (true|false) #REQUIRED>
