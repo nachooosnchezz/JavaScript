@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- NO ESTABA BIEN LINKEADO -->
+<!DOCTYPE tienda SYSTEM "Tienda.dtd">
+<tienda>
+    <producto>
+        <nombre>RAM HyperX Fury Black DDR4</nombre>
+        <categoria>Informática</categoria>
+        <precio>45</precio>
+        <disponibilidad tipo="true"></disponibilidad>
+        <fabricante>HyperX</fabricante>
+        <especificaciones>
+            <procesador></procesador>
+            <ram>8GB</ram>
+            <almacenamiento></almacenamiento>
+            <pantalla></pantalla>
+            <sistema_operativo></sistema_operativo>
+        </especificaciones>
+        <imagen></imagen>
+    </producto>
+    <producto>
+        <nombre>ryzen 7 7800x3d</nombre>
+        <categoria>Informática</categoria>
+        <precio>370</precio>
+        <disponibilidad tipo="true"></disponibilidad>
+        <fabricante>AMD</fabricante>
+        <especificaciones>
+            <procesador>ryzen 7 7800x3d</procesador>
+            <ram></ram>
+            <almacenamiento></almacenamiento>
+            <pantalla></pantalla>
+            <sistema_operativo></sistema_operativo>
+        </especificaciones>
+        <imagen></imagen>
+    </producto>
+</tienda>

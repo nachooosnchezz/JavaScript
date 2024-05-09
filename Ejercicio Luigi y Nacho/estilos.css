@@ -1,0 +1,17 @@
+table, th, td {
+    border: 2px solid;
+}
+
+table th {
+    background-color: #befc42;
+}
+
+table:last-child th {
+    background-color: #f07443;
+}
+
+img {
+    height: auto;
+    max-width: 100px;
+}
+
