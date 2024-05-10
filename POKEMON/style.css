@@ -1,0 +1,19 @@
+table, th, td {
+    border: 1px solid;
+  }
+
+table th {
+    background-color: #9acd32;
+}
+
+table:last-child th {
+    background-color: #ffa07a;
+}
+
+
+img {
+    max-width: 100px;
+    height: auto;
+}
+
+

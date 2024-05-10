@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="index.xsl"?>
+<!DOCTYPE ligaPokemon SYSTEM "index2.dtd">
+
+<ligaPokemon>
+    <pokedex>
+        <pokemon>
+            <nombre id="P1">Bulbasaur</nombre>
+            <imagen>Bulbasaur.jpg</imagen>
+            <especie>Seed Pokémon</especie>
+            <tipo>Planta</tipo>
+            <tipo>Veneno</tipo>
+            <habilidades>
+                <habilidad>Espesura</habilidad>
+                <habilidad>SobreCarga</habilidad>
+                <habilidad>Clorofila</habilidad>
+                <habilidad>Insomnio</habilidad>
+                <habilidadDestacada>Retroceso</habilidadDestacada>
+            </habilidades>
+            <stats>
+                <PS>45</PS>
+                <Ataque>49</Ataque>
+                <Defensa>49</Defensa>
+                <Velocidad>45</Velocidad>
+                <AtaqueEspecial>65</AtaqueEspecial>
+                <DefensaEspecial>65</DefensaEspecial>
+            </stats>
+        </pokemon>
+        <!-- Otros Pokémon de la primera generación aquí -->
+    </pokedex>
+    <entrenadores>
+        <entrenador>
+            <nombreEntrenador>Ash</nombreEntrenador>
+            <apellidos>Ketchum</apellidos>
+            <edad>10</edad>
+            <fechaNacimiento dia="22" mes="septiembre" año="2014"/>
+            <lugarNacimiento>Pueblo Paleta</lugarNacimiento>
+            <pokemonEntrenador numeroPokedex="P1">
+                <mote>Bulbasaur</mote>
+                <genero>Masculino</genero>
+                <fechaCaptura dia="1" mes="enero" año="2024"/>
+                <tipoPokeball>UltraBall</tipoPokeball>
+            </pokemonEntrenador>
+            <!-- Otros Pokémon de Ash aquí -->
+        </entrenador>
+        <!-- Otros entrenadores aquí -->
+    </entrenadores>
+</ligaPokemon>

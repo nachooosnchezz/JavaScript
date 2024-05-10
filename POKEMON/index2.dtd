@@ -1,0 +1,39 @@
+<!ELEMENT ligaPokemon (pokedex, entrenadores)>
+
+    <!ELEMENT pokedex (pokemon+)>
+        <!ELEMENT pokemon (nombre, imagen, especie, tipo+, habilidades, stats)>
+            <!ELEMENT nombre (#PCDATA)>
+                <!ATTLIST nombre id ID #REQUIRED>
+            <!ELEMENT imagen (#PCDATA)>
+            <!ELEMENT especie (#PCDATA)>
+            <!ELEMENT tipo (#PCDATA)>
+            <!ELEMENT habilidades (habilidad+, habilidadDestacada)>
+                <!ELEMENT habilidad (#PCDATA)>
+                <!ELEMENT habilidadDestacada (#PCDATA)>
+            <!ELEMENT stats (PS, Ataque, Defensa, Velocidad, AtaqueEspecial, DefensaEspecial)>
+                <!ELEMENT PS (#PCDATA)>
+                <!ELEMENT Ataque (#PCDATA)>
+                <!ELEMENT Defensa (#PCDATA)>
+                <!ELEMENT Velocidad (#PCDATA)>
+                <!ELEMENT AtaqueEspecial (#PCDATA)>
+                <!ELEMENT DefensaEspecial (#PCDATA)>
+
+    <!ELEMENT entrenadores (entrenador+)>
+        <!ELEMENT entrenador (nombreEntrenador, apellidos, edad, fechaNacimiento, lugarNacimiento, pokemonEntrenador+)>
+            <!ELEMENT nombreEntrenador (#PCDATA)>
+            <!ELEMENT apellidos (#PCDATA)>
+            <!ELEMENT edad (#PCDATA)>
+            <!ELEMENT fechaNacimiento EMPTY>
+                <!ATTLIST fechaNacimiento dia CDATA #REQUIRED>
+                <!ATTLIST fechaNacimiento mes CDATA #REQUIRED>
+                <!ATTLIST fechaNacimiento año CDATA #REQUIRED>
+            <!ELEMENT lugarNacimiento (#PCDATA)>
+            <!ELEMENT pokemonEntrenador (mote, genero, fechaCaptura, tipoPokeball)>
+                <!ATTLIST pokemonEntrenador numeroPokedex IDREF #REQUIRED>
+                <!ELEMENT mote (#PCDATA)>
+                <!ELEMENT genero (#PCDATA)>
+                <!ELEMENT fechaCaptura (#PCDATA)>
+                    <!ATTLIST fechaCaptura dia CDATA #REQUIRED>
+                    <!ATTLIST fechaCaptura mes CDATA #REQUIRED>
+                    <!ATTLIST fechaCaptura año CDATA #REQUIRED>
+                <!ELEMENT tipoPokeball (#PCDATA)>
